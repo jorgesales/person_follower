@@ -35,6 +35,38 @@ class PersonFollower(Node):
         angle_max = input_msg.angle_max
         angle_increment = input_msg.angle_increment
         ranges = input_msg.ranges
+
+        a_min = 0
+        a_max = 360
+        i_min = 170
+        i_max = 210
+        r_min = 0.5
+        r_max = 3.0
+        k_ang = 0.01
+        detected = false
+
+        vx = 0.
+        wz = 0.
+
+        for (i = i_min; i < i_max; i+=1):
+            if r_min < ranges(i) < r_max:                
+                vx = 0.5
+                wz = (180 - i) * k_ang;
+                break
+            else:
+                vx = 0.
+                wz = 0.
+
+   
+
+
+
+
+        # i=0
+        # for r in ranges:
+        #     print ("i= " + str(i) + "   r=" + str(r))
+        #     i = i+1
+
         #
         # your code for computing vx, wz
         #
