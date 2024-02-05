@@ -42,8 +42,11 @@ class PersonFollower(Node):
         i_max = 210
         r_min = 0.5
         r_max = 3.0
-        k_ang_speed = 0.1
-        lin_speed = 0.15
+        #k_ang_speed = 0.1
+        k_ang_speed = 0.2
+        #lin_speed = 0.15
+        lin_speed = 0.22
+
 
         vx = 0.
         wz = 0.
@@ -52,7 +55,7 @@ class PersonFollower(Node):
             if r_min < ranges[i] < r_max:                
                 vx = lin_speed
                 wz = (180 - i) * k_ang_speed
-                print ("Detected!  i=" + str(i))
+                print ("Detected!  i=" + str(i) + "  Range: " + str(ranges[i]) + "  Linear: " + str(vx) + "   Angular= " + str(wz))
                 break
             else:
                 vx = 0.
